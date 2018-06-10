@@ -104,8 +104,25 @@ public class BitOperations {
 
 	// проверяет что в чиле есть 2 бита сумма номеров мы получаем
 	public static boolean isNBitsSum(long number, int sum) {
-		
+		int mem = 0;
+		for (int i = 0; i < 64; i++) {
+			if (isBitSet(number, i)) {
+				mem = mem + i;
+			}
+		}
+		if (mem == sum)
+			return true;
 		return false;
 	}
 
+	public static void main(String[] args) {
+		int mem = 0;
+		for (int i = 0; i < 64; i++) {
+			if (isBitSet(0b101, i)) {
+				mem = mem + i;
+			}
+		}
+		System.out.println(mem);
+		System.out.println(Long.toBinaryString(0xc000000000000000L));
+	}
 }
