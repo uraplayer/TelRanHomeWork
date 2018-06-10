@@ -102,10 +102,16 @@ public class BitOperations {
 		return (number * 205) >> 11;// wrong code for demonstration
 	}
 
-	// проверяет что в чиле есть 2 бита сумма номеров мы получаем
+	/**
+	 * 
+	 * @param number
+	 * @param sum
+	 * @return Метод проверяет наличие битов в числе long установленных в 1, и суммирует номера  их позиций,
+	 * если сумма совпалает с переданной, возвращается true, иначе false
+	 */
 	public static boolean isNBitsSum(long number, int sum) {
 		int mem = 0;
-		for (int i = 0; i < 64; i++) {
+		for (int i = 0; i <= MAX_BIT_NUMBER; i++) {
 			if (isBitSet(number, i)) {
 				mem = mem + i;
 			}
@@ -115,14 +121,4 @@ public class BitOperations {
 		return false;
 	}
 
-	public static void main(String[] args) {
-		int mem = 0;
-		for (int i = 0; i < 64; i++) {
-			if (isBitSet(0b101, i)) {
-				mem = mem + i;
-			}
-		}
-		System.out.println(mem);
-		System.out.println(Long.toBinaryString(0xc000000000000000L));
-	}
 }
