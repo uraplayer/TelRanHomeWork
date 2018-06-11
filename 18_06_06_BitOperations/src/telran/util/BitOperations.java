@@ -142,5 +142,5 @@ public class BitOperations {
 		System.out.println(Long.toBinaryString(0xc000000000000000L));
 
 	}
-
+  
 }
